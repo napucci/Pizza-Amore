@@ -1,5 +1,12 @@
-const button = document.querySelector('button'); 
+const pizzabtn = document.getElementById('pizza-btn'); 
+const saladbtn = document.getElementById('salad-btn')
+const subsbtn = document.getElementById('subs-btn')
+const drinksbtn = document.getElementById('drinks-btn')
 
 
 
-button.addEventListener('click', () => alert('Pizza!'))
+pizzabtn.addEventListener('click', () => alert('Pizza!'))
+
+saladbtn.addEventListener('click', () => alert('Salad!'))
+subsbtn.addEventListener('click', () => alert('Subs!'))
+drinksbtn.addEventListener('click', () => alert('Drinks!'))
