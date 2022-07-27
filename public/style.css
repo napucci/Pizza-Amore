@@ -7,8 +7,6 @@ body {
   background-color: #e1d800;
 }
 
-
-
 img {
   width: 150px; 
   height: 150px; 
@@ -17,27 +15,32 @@ img {
 }
 
 #title {
-  
-  width: 400px;
+  width: 400px; 
   
 }
+
 h2 {
   font-size: 52px;
   text-align: right;
-  margin-top: 15px;
+  margin-top: 15px; 
+}
+
+#navbar {
+  display: flex;
   
 }
 
 ul {
   display: flex;
-  
+  align-items: flex-end;
 }
 
 li {
   list-style: none;
   margin-right: 60px;
-  margin-top: 30px;
+  margin-bottom: 20px;
   font-size: 20px;
+  
 }
 
 #logo {
@@ -60,7 +63,6 @@ h1 {
   display: grid; 
   grid-template-columns: 250px 250px;
   justify-content: center;
- 
 }
 
 .order-squares {

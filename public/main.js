@@ -6,7 +6,6 @@ const drinksbtn = document.getElementById('drinks-btn')
 
 
 pizzabtn.addEventListener('click', () => alert('Pizza!'))
-
 saladbtn.addEventListener('click', () => alert('Salad!'))
 subsbtn.addEventListener('click', () => alert('Subs!'))
 drinksbtn.addEventListener('click', () => alert('Drinks!'))
