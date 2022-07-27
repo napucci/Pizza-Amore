@@ -1,8 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 button {
   background-color: blue;
   color: white
 }
 
 img {
-  width: 10%; 
+  width: 150px; 
+  
+
+}
+
+#title {
+  font-size: 64px;
+  width: 400px;
+  margin-left: 60px;
+}
+
+ul {
+  display: flex;
+  
+}
+
+li {
+  list-style: none;
+  margin-right: 60px;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+#logo {
+  width: 150px;
+}
+
+#header{
+  display: flex;
+  justify-content: space-between;
+  background-color:	#dba24a;
+  color: 		#e1d800;
 }
