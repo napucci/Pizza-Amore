@@ -3,10 +3,11 @@
   padding: 0;
 }
 
-button {
-  background-color: blue;
-  color: white
+body {
+  background-color: #e1d800;
 }
+
+
 
 img {
   width: 150px; 
@@ -41,4 +42,33 @@ li {
   justify-content: space-between;
   background-color:	#dba24a;
   color: 		#e1d800;
+}
+
+h1 {
+  text-align: center;
+}
+
+.order-section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+
+.order-squares {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+button {
+  background-color: 	#e12301;
+  color: white;
+  margin-top: 10px;
+  border-style: none;
+  border-radius: 20px;
+  padding: 10px;
 }
