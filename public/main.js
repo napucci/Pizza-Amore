@@ -1,7 +1,7 @@
-const butt = document.querySelector('button'); 
+const button = document.querySelector('button'); 
 
 const alert = () => {
   alert('Hello!')
 }
 
-butt.addEventListener(click, alert)
+button.addEventListener(click, alert)
