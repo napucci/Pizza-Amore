@@ -19,10 +19,16 @@ app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
-app.get('/home', (req, res) => {
-    rollbar.log('Success!')
-    res.status(200).send('Nice work!')
+app.get('/api/cater', (req, res) => {
+   try { rollbar.log('Success!')
+    res.status(200).send(food)
+}
+catch  {
+    rollbar.critical('Food was not found!')
+}
 })
+
+const food = ['cheese', 'pepperoni', 'veggie']
 
 app.use(express.static(path.join(__dirname, '../public')))
 
