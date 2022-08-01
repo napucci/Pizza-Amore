@@ -21,7 +21,9 @@ const addToCartDb = (body) => {
 }
 
 const addToCart = (e) => {
-  let newItem = {item: e.target.innerText}; 
+  let newItem = {
+    item: e.target.innerText,
+  }; 
   addToCartDb(newItem); 
   alert(`${e.target.innerText} has been added to cart!`)
   
@@ -32,9 +34,9 @@ const addToCart = (e) => {
 
 // home page listeners
 pizzabtn.addEventListener('click', addToCart); 
-saladbtn.addEventListener('click', () => alert('Salad added to cart!'))
-subsbtn.addEventListener('click', () => alert('Sub added to cart!'))
-drinksbtn.addEventListener('click', () => alert('Drink added to cart!'))
+saladbtn.addEventListener('click', addToCart)
+subsbtn.addEventListener('click', addToCart)
+drinksbtn.addEventListener('click', addToCart)
 
 
 

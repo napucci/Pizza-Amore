@@ -8,10 +8,11 @@ const app = express()
 app.use(express.json());
 app.use(cors())
 // access controller functions
-const {getCart, addToCartDb} = require('./controller')
+const {getCart, addToCartDb, deleteItem} = require('./controller')
 
 app.get('/api/cart/', getCart); 
 app.post('/api/cart/', addToCartDb); 
+app.delete('/api/cart/:id', deleteItem); 
 
 // include and initialize the rollbar library with your access token
 const Rollbar = require("rollbar");

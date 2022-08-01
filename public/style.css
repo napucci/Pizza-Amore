@@ -115,3 +115,26 @@ form {
   cursor: pointer;
   width: 250px;
 }
+
+#cart-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart-div {
+  background-color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-button {
+  margin-bottom: 5px;
+}
