@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
 
+<body>
+  
   <!-- Page header -->
   <section id="header">
     <div id="logo">
@@ -24,26 +25,21 @@
         <li><a href="./catering.html">Catering</a></li>
       </ul>
     </div>
-   
   </section>
 
-  <!-- Page title -->
-  <h1>Plan Your Event Today!</h1>
-  
-  <!-- Catering form -->
-  <form action="">
-    <input type="text" placeholder="Enter your first name">
-    <input type="text" placeholder="Enter your last name">
-    <input type="date">
-    <select id="catering-options" type="select">
-      <option value="Pizza-Party">Pizza Party</option>
-      <option value="Sub-Party">Sub Party</option>
-      <option value="Sub-and-Pizza Party">Sub and Pizza Party</option>
-    </select>
-    <input type="text" placeholder="Enter location">
-    <button id="submit"type="submit">Submit</button>
-  </form>
+  <!-- Get Cart button -->
+  <button id="cart-button">Get Cart</button>
 
+  <!-- Display Cart on Screen -->
+  <section id="cart-section">
+
+  </section>
+  
+<!-- Script tags -->
+<script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
+<script src="./cart.js"></script>
 
 </body>
+
+
 </html>
