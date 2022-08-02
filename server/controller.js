@@ -11,10 +11,11 @@ module.exports = {
   }, 
 
   addToCartDb: (req, res) => {
-    const {item} = req.body; 
+    const {item, quantity} = req.body; 
     let newItem = {
       id: globalId, 
-      item: item
+      item: item,
+      quantity: quantity
     }
     cart.push(newItem); 
     globalId++
@@ -25,5 +26,17 @@ module.exports = {
     let index = cart.findIndex(item => item.id === +req.params.id); 
     cart.splice(index, 1); 
     res.status(200).send(cart); 
+  }, 
+  updateQuantity: (req, res) => {
+    let index = cart.findIndex(item => item.id === +req.params.id)
+    const {type} = req.body; 
+    if(type === 'minus' && cart[index].quantity > 0){
+      cart[index].quantity -= 1; 
+      res.status(200).send(cart)
+    }
+    else {
+      cart[index].quantity += 1; 
+      res.status(200).send(cart)
+    }
   }
 }

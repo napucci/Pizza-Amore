@@ -23,6 +23,7 @@ const addToCartDb = (body) => {
 const addToCart = (e) => {
   let newItem = {
     item: e.target.innerText,
+    quantity: 1
   }; 
   addToCartDb(newItem); 
   alert(`${e.target.innerText} has been added to cart!`)

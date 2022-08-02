@@ -15,16 +15,30 @@ function getCart() {
     for (let i = 0; i < data.length; i++){
     let newCart = document.createElement('div'); 
     newCart.className = 'cart-div'; 
-    newCart.innerHTML = `<p>${data[i].item}</p><button id="deletebtn" onclick="deleteItem(${data[i].id})">delete</button>`
+    newCart.innerHTML = `<p>${data[i].item}</p>
+    <button onclick="updateQuantity(${data[i].id}, 'minus')">-</button>
+    <p class="item-quantity">${data[i].quantity}</p>
+    <button onclick="updateQuantity(${data[i].id}, 'plus')">+</button>
+    <button id="deletebtn" onclick="deleteItem(${data[i].id})">delete</button>`
     cartSection.appendChild(newCart);
     }
   })
 }
 
+// deletes cartItem from database
 function deleteItem(id) {
   axios.delete(`/api/cart/${id}`)
   .then(res => {
     getCart();
+  })
+}
+
+
+// changes amount of an item users wants in the cart
+function updateQuantity(id, type) {
+  axios.put(`/api/cart/${id}`, {type})
+  .then(res => {
+    getCart()
   })
 }
 
