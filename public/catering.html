@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="catering.style.css">
 </head>
 
 <body>
@@ -32,19 +32,25 @@
   <h1>Plan Your Event Today!</h1>
   
   <!-- Catering form -->
-  <form action="">
-    <input type="text" placeholder="Enter your first name">
-    <input type="text" placeholder="Enter your last name">
-    <input type="date">
+  <form id="submit" action="">
+    <input id="first-name" type="text" placeholder="Enter your first name" required>
+    <input id="last-name" type="text" placeholder="Enter your last name" required>
+    <input id="date" type="date" required>
     <select id="catering-options" type="select">
       <option value="Pizza-Party">Pizza Party</option>
       <option value="Sub-Party">Sub Party</option>
       <option value="Sub-and-Pizza Party">Sub and Pizza Party</option>
     </select>
-    <input type="text" placeholder="Enter location">
-    <button id="submit"type="submit">Submit</button>
+    <input id="location" type="text" placeholder="Enter location" required>
+    <button type="submit">Submit</button>
   </form>
 
-
+  <!-- Catering Events Displayed Section -->
+  <section id="catering-events">
+    
+  </section>
+  <!-- Script tags -->
+  <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
+  <script src="./catering.js"></script>
 </body>
 </html>

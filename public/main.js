@@ -23,8 +23,22 @@ const addToCartDb = (body) => {
 const addToCart = (e) => {
   let newItem = {
     item: e.target.innerText,
-    quantity: 1
-  }; 
+    quantity: 1,
+    price: 0
+  };
+  const {item} = newItem;  
+  if(item === 'Pizza'){
+    newItem.price = 12
+  }
+  else if(item === 'Salad'){
+    newItem.price = 7
+  }
+  else if(item === 'Sub'){
+    newItem.price = 9
+  }
+  else {
+    newItem.price = 3
+  }
   addToCartDb(newItem); 
   alert(`${e.target.innerText} has been added to cart!`)
   
