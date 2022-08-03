@@ -11,13 +11,14 @@ module.exports = {
   }, 
 
   addToCartDb: (req, res) => {
-    const {item, quantity, price} = req.body; 
+    const {item, quantity, price, time} = req.body; 
     let newItem = {
       id: globalId, 
       item: item,
       quantity: quantity,
-      price: price
-    }
+      price: price,
+      time: time
+    }  
     cart.push(newItem); 
     globalId++
     res.status(200).send(cart)
@@ -35,12 +36,15 @@ module.exports = {
       cart[index].quantity -= 1;
       if(cart[index].item === 'Pizza'){
         cart[index].price -= 12
+        cart[index].time -= 10
       }
       else if(cart[index].item === 'Salad'){
         cart[index].price -= 7
+        cart[index].time -= 5
       }
       else if(cart[index].item === 'Sub'){
         cart[index].price -= 9
+        cart[index].time -= 8
       }
       else if(cart[index].item === 'Drink'){
         cart[index].price -= 3
@@ -51,12 +55,15 @@ module.exports = {
       cart[index].quantity += 1; 
       if(cart[index].item === 'Pizza'){
         cart[index].price += 12
+        cart[index].time += 10
       }
       else if(cart[index].item === 'Salad'){
         cart[index].price += 7
+        cart[index].time += 5
       }
       else if(cart[index].item === 'Sub'){
         cart[index].price += 9
+        cart[index].time += 7
       }
       else if(cart[index].item === 'Drink'){
         cart[index].price += 3
@@ -69,5 +76,16 @@ module.exports = {
     else {
       res.status(400).send('Quantity cannot go higher')
     }
+  },
+  
+  getQueue: (req, res) => {
+    if(cart.includes(skefkjlsefjks)){
+      res.status(200).send(cart)
+      
+    }
+    else {
+      res.status(400).send('Please add an item to the cart')
+    }
   }
+
 }

@@ -13,13 +13,16 @@ const {getCart, addToCartDb, deleteItem, updateQuantity} = require('./controller
 app.get('/api/cart/', getCart); 
 app.post('/api/cart/', addToCartDb); 
 app.delete('/api/cart/:id', deleteItem);
-app.put('/api/cart/:id', updateQuantity) 
+app.put('/api/cart/:id', updateQuantity);
+
+
 
 // access cater controller functions 
 const {getEvents, addEventToDb} = require('./caterController')
 
 app.get('/api/events/', getEvents); 
 app.post('/api/events/', addEventToDb); 
+
 
 // include and initialize the rollbar library with your access token
 const Rollbar = require("rollbar");

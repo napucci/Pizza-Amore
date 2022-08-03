@@ -2,6 +2,8 @@
 // cart page elements
 const cartBtn = document.getElementById('cart-button'); 
 const cartSection = document.getElementById('cart-section'); 
+const submitOrder = document.getElementById('cart-checkout'); 
+const queue = document.getElementById('queue');
 
 
 // cart page functions
@@ -11,8 +13,15 @@ function getCart() {
     cartSection.innerHTML = '';
     const {data} = res
     console.log(data)
-   // loops through cart and displays on cart.html
-    for (let i = 0; i < data.length; i++){
+    createCartCard(data)
+    
+  })
+}
+
+
+// loops through cart and displays on cart.html
+function createCartCard(data){
+  for (let i = 0; i < data.length; i++){
     let newCart = document.createElement('div'); 
     newCart.className = 'cart-div'; 
     newCart.innerHTML = `
@@ -24,7 +33,6 @@ function getCart() {
     <button id="deletebtn" onclick="deleteItem(${data[i].id})">delete</button>`
     cartSection.appendChild(newCart);
     }
-  })
 }
 
 // deletes cartItem from database
@@ -47,5 +55,38 @@ function updateQuantity(id, type) {
   })
 }
 
+// Make queue card
+function createQueueCard(data){
+  let totalPrice = 0;
+  let orderedItems = []; 
+  let totalTime = 0; 
+  for (let i = 0; i < data.length; i++) {
+    totalPrice += data[i].price
+    orderedItems.push(data[i].item + ' ') 
+    totalTime += data[i].time
+  }
+    let newOrder = document.createElement('div'); 
+    newOrder.className = 'queue-div'; 
+    newOrder.innerHTML = 
+    `<p>Your order of ${orderedItems} is $${totalPrice}. Estimated time: ${totalTime} mins. </p>`
+    queue.appendChild(newOrder);
+    
+}
+
+// Get cart data and put in queue 
+function getQueue() {
+  axios.get('/api/cart/')
+  .then(res => {
+    console.log(res.data)
+    createQueueCard(res.data)
+    for(let i =0; i < res.data.length; i++){
+      deleteItem(res.data[i].id)
+    }
+  })
+}
+
+
+
 //cart page listeners
-cartBtn.addEventListener('click', getCart)
+document.addEventListener('DOMContentLoaded', getCart)
+submitOrder.addEventListener('click', getQueue)

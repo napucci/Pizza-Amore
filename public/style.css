@@ -116,7 +116,8 @@ form {
   width: 250px;
 }
 
-#cart-section{
+
+#cart-section, #queue{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,7 +126,7 @@ form {
   margin-right: auto;
 }
 
-.cart-div {
+.cart-div, .queue-div {
   background-color: white;
   margin-top: 15px;
   margin-bottom: 15px;

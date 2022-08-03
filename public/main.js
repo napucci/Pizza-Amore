@@ -24,9 +24,10 @@ const addToCart = (e) => {
   let newItem = {
     item: e.target.innerText,
     quantity: 1,
-    price: 0
+    price: 0, 
+    time: 0
   };
-  const {item} = newItem;  
+  const {item, time, quantity, price} = newItem;  
   if(item === 'Pizza'){
     newItem.price = 12
   }
@@ -38,6 +39,18 @@ const addToCart = (e) => {
   }
   else {
     newItem.price = 3
+  };
+  if(item === 'Pizza'){
+    newItem.time = quantity * 10
+  }
+  else if(item === 'Salad'){
+    newItem.time = quantity * 5
+  }
+  else if(item === 'Sub'){
+    newItem.time = quantity * 8
+  }
+  else {
+    newItem.time = 0
   }
   addToCartDb(newItem); 
   alert(`${e.target.innerText} has been added to cart!`)
