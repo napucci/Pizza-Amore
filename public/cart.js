@@ -56,21 +56,27 @@ function updateQuantity(id, type) {
 }
 
 // Make queue card
-function createQueueCard(data){
-  let totalPrice = 0;
-  let orderedItems = []; 
-  let totalTime = 0; 
-  for (let i = 0; i < data.length; i++) {
-    totalPrice += data[i].price
-    orderedItems.push(data[i].item + ' ') 
-    totalTime += data[i].time
+function createQueueCard(data) {
+  for(let i = 0; i < data.length; i++){
+    let newItem = document.createElement('p'); 
+    newItem.className = 'queue-div'
+    newItem.innerHTML = `<div id="item-name">${data[i].quantity} ${data[i].item}(s)</div> <div id="item-price">$${data[i].price * data[i].quantity}</div>`
+    queue.appendChild(newItem)
   }
-    let newOrder = document.createElement('div'); 
-    newOrder.className = 'queue-div'; 
-    newOrder.innerHTML = 
-    `<p>Your order of ${orderedItems} is $${totalPrice}. Estimated time: ${totalTime} mins. </p>`
-    queue.appendChild(newOrder);
-    
+  let subtotal = 0
+  data.forEach(item => subtotal += item.price * item.quantity)
+  const totalStatement = document.createElement('div');
+  totalStatement.className = 'queue-div'
+  const tax = parseFloat(subtotal * .06).toFixed(2); 
+  const total = parseFloat(subtotal + (subtotal * .06)).toFixed(2)
+  const totals = [subtotal, tax, total]
+  const totalTitles = ['Subtotal', 'Tax', 'Total']
+  for(let i = 0; i < totals.length; i++){
+    let newTotal = document.createElement('p')
+    newTotal.className = 'queue-div'
+    newTotal.innerHTML = `<div id="item-name">${totalTitles[i]}</div> <div id="item-price">$${totals[i]}</div>`
+    queue.appendChild(newTotal)
+  }
 }
 
 // Get cart data and put in queue 

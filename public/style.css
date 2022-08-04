@@ -117,7 +117,7 @@ form {
 }
 
 
-#cart-section, #queue{
+#cart-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,7 +126,7 @@ form {
   margin-right: auto;
 }
 
-.cart-div, .queue-div {
+.cart-div {
   background-color: white;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -138,4 +138,38 @@ form {
 
 .delete-button {
   margin-bottom: 5px;
+}
+
+#queue {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 250px; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  padding: 20px;
+}
+
+.queue-div {
+  display: flex;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalName {
+ 
+}
+
+.totalPrice {
+  
 }
