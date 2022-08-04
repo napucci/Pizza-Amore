@@ -61,7 +61,7 @@ h1 {
 
 .order-section{
   display: grid; 
-  grid-template-columns: 250px 250px;
+  grid-template-columns: 250px 250px 250px 250px;
   justify-content: center;
 }
 
@@ -148,7 +148,6 @@ form {
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
-  padding: 20px;
 }
 
 .queue-div {
@@ -159,17 +158,8 @@ form {
   justify-content: space-between;
 }
 
-
-
 .total {
   display: flex;
   justify-content: space-between;
 }
 
-.totalName {
- 
-}
-
-.totalPrice {
-  
-}

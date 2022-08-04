@@ -1,8 +1,6 @@
 
-// cart page elements
-const cartBtn = document.getElementById('cart-button'); 
+// cart page element
 const cartSection = document.getElementById('cart-section'); 
-const submitOrder = document.getElementById('cart-checkout'); 
 const queue = document.getElementById('queue');
 
 
@@ -33,6 +31,12 @@ function createCartCard(data){
     <button id="deletebtn" onclick="deleteItem(${data[i].id})">delete</button>`
     cartSection.appendChild(newCart);
     }
+    const submitOrder = document.createElement('button')
+    submitOrder.className = 'cart-checkout'
+    submitOrder.innerText = "Submit Order"
+    submitOrder.type = 'submit'
+    submitOrder.addEventListener('click', getQueue)
+    cartSection.appendChild(submitOrder)
 }
 
 // deletes cartItem from database
@@ -60,11 +64,12 @@ function createQueueCard(data) {
   for(let i = 0; i < data.length; i++){
     let newItem = document.createElement('p'); 
     newItem.className = 'queue-div'
-    newItem.innerHTML = `<div id="item-name">${data[i].quantity} ${data[i].item}(s)</div> <div id="item-price">$${data[i].price * data[i].quantity}</div>`
+    newItem.innerHTML = `<div id="item-name">${data[i].quantity} ${data[i].item}(s)</div> <div id="item-price">$${data[i].price}</div>`
     queue.appendChild(newItem)
   }
+  // displays total information
   let subtotal = 0
-  data.forEach(item => subtotal += item.price * item.quantity)
+  data.forEach(item => subtotal += item.price)
   const totalStatement = document.createElement('div');
   totalStatement.className = 'queue-div'
   const tax = parseFloat(subtotal * .06).toFixed(2); 
@@ -77,10 +82,14 @@ function createQueueCard(data) {
     newTotal.innerHTML = `<div id="item-name">${totalTitles[i]}</div> <div id="item-price">$${totals[i]}</div>`
     queue.appendChild(newTotal)
   }
+ 
 }
 
 // Get cart data and put in queue 
-function getQueue() {
+async function getQueue() {
+// Remove the cart instead of button because of event bubbling
+cartSection.remove()
+ console.log(cartSection)
   axios.get('/api/cart/')
   .then(res => {
     console.log(res.data)
@@ -88,6 +97,7 @@ function getQueue() {
     for(let i =0; i < res.data.length; i++){
       deleteItem(res.data[i].id)
     }
+    
   })
 }
 
@@ -95,4 +105,3 @@ function getQueue() {
 
 //cart page listeners
 document.addEventListener('DOMContentLoaded', getCart)
-submitOrder.addEventListener('click', getQueue)
