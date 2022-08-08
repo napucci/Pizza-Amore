@@ -204,7 +204,7 @@ form {
 
   .order-section{
     display: grid; 
-    grid-template-columns: 115px 115px 115px 115px;
+    grid-template-columns: 105px 105px 105px 105px;
     justify-content: center;
   }
 
@@ -218,7 +218,7 @@ form {
   }
   button {
     padding: 7px;
-    width: 75%;
+    
   }
 
   .cart-div {
