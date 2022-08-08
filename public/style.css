@@ -186,7 +186,7 @@ form {
 
   h2 {
     font-size: 32px;
-    text-align: center;
+    text-align: left;
   }
 
   h1 {
@@ -200,5 +200,32 @@ form {
 
   #title {
     width: 200px; 
+  }
+
+  .order-section{
+    display: grid; 
+    grid-template-columns: 115px 115px 115px 115px;
+    justify-content: center;
+  }
+
+  .order-squares {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  button {
+    padding: 5px;
+  }
+
+  .cart-div {
+    width: 350px; 
+    
+  }
+
+  #cart-section {
+    margin-left: 50px;
   }
 }

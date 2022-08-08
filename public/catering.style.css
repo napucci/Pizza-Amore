@@ -126,4 +126,12 @@ form {
   #title {
     width: 200px; 
   }
+
+  .event-div {
+    width: 350px;
+  }
+  
+  #catering-events {
+    margin-left: 50px;
+  }
 }
