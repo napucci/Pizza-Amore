@@ -82,7 +82,15 @@ function createQueueCard(data) {
     newTotal.innerHTML = `<div id="item-name">${totalTitles[i]}</div> <div id="item-price">$${totals[i]}</div>`
     queue.appendChild(newTotal)
   }
- 
+  // displays estimated time
+  let timeTotal = 0; 
+  for(let i = 0; i < data.length; i++){
+    timeTotal += data[i].time 
+  }
+ let completedStatement = document.createElement('p')
+ completedStatement.innerText = `Your order is being processed. Estimated wait time is ${timeTotal} mins.`
+ completedStatement.className = 'time-statement'
+ queue.appendChild(completedStatement)
 }
 
 // Get cart data and put in queue 

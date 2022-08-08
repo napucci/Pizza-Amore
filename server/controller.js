@@ -11,13 +11,14 @@ module.exports = {
   }, 
 
   addToCartDb: (req, res) => {
-    const {item, quantity, price, time} = req.body; 
+    const {item, quantity, price, time, category} = req.body; 
     let newItem = {
       id: globalId, 
       item: item,
       quantity: quantity,
       price: price,
-      time: time
+      time: time, 
+      category: category
     }  
     cart.push(newItem); 
     globalId++
@@ -34,38 +35,38 @@ module.exports = {
     const {type} = req.body; 
     if(type === 'minus' && cart[index].quantity > 0){
       cart[index].quantity -= 1;
-      if(cart[index].item === 'Pizza'){
+      if(cart[index].category === 'pizza'){
         cart[index].price -= 12
         cart[index].time -= 10
       }
-      else if(cart[index].item === 'Salad'){
+      else if(cart[index].category === 'salad'){
         cart[index].price -= 7
         cart[index].time -= 5
       }
-      else if(cart[index].item === 'Sub'){
+      else if(cart[index].category === 'sub'){
         cart[index].price -= 9
         cart[index].time -= 8
       }
-      else if(cart[index].item === 'Drink'){
+      else if(cart[index].category === 'drink'){
         cart[index].price -= 3
       }
       res.status(200).send(cart)
     }
     else if (type === 'plus' && cart[index].quantity < 20) {
       cart[index].quantity += 1; 
-      if(cart[index].item === 'Pizza'){
+      if(cart[index].category === 'pizza'){
         cart[index].price += 12
         cart[index].time += 10
       }
-      else if(cart[index].item === 'Salad'){
+      else if(cart[index].category === 'salad'){
         cart[index].price += 7
         cart[index].time += 5
       }
-      else if(cart[index].item === 'Sub'){
+      else if(cart[index].category === 'sub'){
         cart[index].price += 9
         cart[index].time += 7
       }
-      else if(cart[index].item === 'Drink'){
+      else if(cart[index].category === 'drink'){
         cart[index].price += 3
       }
       res.status(200).send(cart)

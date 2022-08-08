@@ -101,3 +101,29 @@ form {
 .delete-button {
   margin-bottom: 5px;
 }
+
+@media (max-width: 500px) {
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 32px;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  li {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+
+  #title {
+    width: 200px; 
+  }
+}

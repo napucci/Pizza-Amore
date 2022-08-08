@@ -40,7 +40,7 @@ app.use(rollbar.errorHandler())
 
 // Deploy html pages 
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+    res.sendFile(path.join(__dirname, '../public/menu.html'))
 })
 
 // Deploy CSS and JS
