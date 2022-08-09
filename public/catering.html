@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Pizza Amore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&family=Open+Sans&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="catering.style.css">
 </head>
 
@@ -20,9 +23,9 @@
     </div>
     <div id="navbar">
       <ul>
-        <li><a href="./menu.html">Home</a></li>
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="./menu.html">Menu</a></li>
         <li><a href="./catering.html">Catering</a></li>
-        <li><a href=""></a></li>
       </ul>
     </div>
    
@@ -32,19 +35,30 @@
   <h1>Plan Your Event Today!</h1>
   
   <!-- Catering form -->
+
+  <section id="middle">
+  <img id="left-image"src="https://www.gannett-cdn.com/authoring/2014/04/16/NCOM/ghows-OH-d59e82a2-45bd-4a16-a359-6e423fb4f20a-cd960932.jpeg?crop=599,339,x0,y30&width=599&height=299&format=pjpg&auto=webp" alt="italian family cheersing">
+
   <form id="submit" action="">
+    <label for="first-name">First Name</label>
     <input id="first-name" type="text" placeholder="Enter your first name" required>
+    <label for="last-name">Last Name</label>
     <input id="last-name" type="text" placeholder="Enter your last name" required>
+    <label for="date">Date</label>
     <input id="date" type="date" required>
+    <label for="catering-options">Select Option</label>
     <select id="catering-options" type="select">
       <option value="Pizza-Party">Pizza Party</option>
       <option value="Sub-Party">Sub Party</option>
       <option value="Sub-and-Pizza Party">Sub and Pizza Party</option>
     </select>
+    <label for="location">Location</label>
     <input id="location" type="text" placeholder="Enter location" required>
-    <button type="submit">Submit</button>
+    <button id="form-button" type="submit">Submit</button>
   </form>
 
+  <img id="right-image" src="https://s3.amazonaws.com/clearvoice-media/asg_wStySywjNrAPBARD%2Fart_JUacLgehQV69GIqw%2F1545157666333-Galactic+Pizza_Group.jpg" alt="italian catering">
+</section>
   <!-- Catering Events Displayed Section -->
   <section id="catering-events">
     

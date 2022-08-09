@@ -1,10 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-color: #e1d800;
+  /* background-color: #e1d800; */
+  background-color: #f2f2f2;
 }
 
 img {
@@ -50,7 +52,8 @@ li {
 #header{
   display: flex;
   justify-content: space-evenly;
-  background-color:	#dba24a;
+  /* background-color:	#dba24a; */
+  background-color: #009246;
   color: 		#e1d800;
 }
 
@@ -69,15 +72,65 @@ button {
   padding: 10px;
 }
 
+#middle {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#left-image {
+  height: 400px;
+  width: 300px;
+  margin-left: 50px;
+  border-radius: 5px;
+}
+
 form {
+  background-color: rgb(30,30,40);
+  color: white;
   display: flex;
   flex-direction: column;
-  width: 250px; 
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
+  padding: 20px;
+  width: 250px;
+  
 }
 
+#right-image {
+  height: 400px; 
+  width: 300px; 
+  margin-right: 50px;
+  border-radius: 5px;
+}
+
+input, select {
+  margin-bottom: 10px;
+}
+
+label::after {
+  content: '*'; 
+}
+
+#form-button {
+  border: 1px black solid;
+}
+
+#form-button:hover{
+  animation: slide-right .5s linear forwards;
+}
+@keyframes slide-right {
+  33% {
+    width: 50%;
+  }
+  66% {
+    width: 75%;
+  }
+  to {
+    width: 100%;
+    background-color: #00c06a;
+  }
+}
 
 #catering-events {
   display: flex;
@@ -128,10 +181,18 @@ form {
   }
 
   .event-div {
-    width: 350px;
+    width: 430px;
   }
   
   #catering-events {
-    margin-left: 35px;
+    margin-left: 3px;
+  }
+
+  #left-image {
+    display: none;
+  }
+
+  #right-image {
+    display: none; 
   }
 }

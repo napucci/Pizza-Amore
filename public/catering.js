@@ -13,7 +13,6 @@ function getEvents() {
     const {data} = res
     console.log(data)
     createEventCard(data)
-   // loops through events and displays on cartering.html
 })
 }
 

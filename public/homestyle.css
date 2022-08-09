@@ -1,0 +1,126 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-seafood-vegetable-pizza-gourmet-background-poster-image_214182.jpg');
+  z-index: -5;
+}
+
+#navbar {
+  display: flex; 
+  justify-content: space-evenly;
+  position: absolute;
+  z-index: 2;
+  top: 5%;
+  left: 75%;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 32px;
+}
+
+#header {
+  top: 0%;
+  margin-left: 0;
+  display: block;
+  width: 50%;
+  position: relative;
+ 
+}
+
+#italy-picture {
+  height: 650px; 
+  width: 1530px;
+}
+
+section {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}  
+
+article {
+  background-color: rgb(34, 33, 33);
+  padding: 20px;
+}
+
+h1 {
+  color: white;
+  display: inline;
+  font-size: 42px;
+}
+
+p {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#veggies {
+  margin-top: 15px;
+  margin-left: 95px;
+  width: 230px;
+
+}
+
+footer {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.icons {
+  height: 60px;
+  width: 60px;
+  border: 2px solid black;
+  border-radius: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.icons:hover {
+  opacity: .7;
+}
+
+#facebook {
+  background-color: white;
+}
+
+#f {
+  width: 30px;
+}
+
+#instagram {
+  background-color: pink;
+  color: white;
+}
+
+#insta {
+  width: 30px; 
+}
+
+#twitter {
+  background-color: #1DA1F2;
+}
+
+#tweet {
+  width: 30px;
+}

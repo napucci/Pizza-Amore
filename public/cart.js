@@ -1,10 +1,8 @@
-
-// cart page element
 const cartSection = document.getElementById('cart-section'); 
 const queue = document.getElementById('queue');
 
 
-// cart page functions
+
 function getCart() {
   axios.get('/api/cart/')
   .then(res => {
@@ -16,8 +14,6 @@ function getCart() {
   })
 }
 
-
-// loops through cart and displays on cart.html
 function createCartCard(data){
   for (let i = 0; i < data.length; i++){
     let newCart = document.createElement('div'); 
@@ -39,7 +35,6 @@ function createCartCard(data){
     cartSection.appendChild(submitOrder)
 }
 
-// deletes cartItem from database
 function deleteItem(id) {
   axios.delete(`/api/cart/${id}`)
   .then(res => {
@@ -48,7 +43,6 @@ function deleteItem(id) {
 }
 
 
-// changes amount of an item users wants in the cart
 function updateQuantity(id, type) {
   axios.put(`/api/cart/${id}`, {type})
   .then(res => {
@@ -59,7 +53,7 @@ function updateQuantity(id, type) {
   })
 }
 
-// Make queue card
+
 function createQueueCard(data) {
   for(let i = 0; i < data.length; i++){
     let newItem = document.createElement('p'); 
@@ -67,7 +61,7 @@ function createQueueCard(data) {
     newItem.innerHTML = `<div id="item-name">${data[i].quantity} ${data[i].item}(s)</div> <div id="item-price">$${data[i].price}</div>`
     queue.appendChild(newItem)
   }
-  // displays total information
+
   let subtotal = 0
   data.forEach(item => subtotal += item.price)
   const totalStatement = document.createElement('div');
@@ -82,7 +76,7 @@ function createQueueCard(data) {
     newTotal.innerHTML = `<div id="item-name">${totalTitles[i]}</div> <div id="item-price">$${totals[i]}</div>`
     queue.appendChild(newTotal)
   }
-  // displays estimated time
+
   let timeTotal = 0; 
   for(let i = 0; i < data.length; i++){
     timeTotal += data[i].time 
@@ -93,10 +87,10 @@ function createQueueCard(data) {
  queue.appendChild(completedStatement)
 }
 
-// Get cart data and put in queue 
+
 async function getQueue() {
-// Remove the cart instead of button because of event bubbling
 cartSection.remove()
+queue.style.display = 'flex'
  console.log(cartSection)
   axios.get('/api/cart/')
   .then(res => {
@@ -109,7 +103,4 @@ cartSection.remove()
   })
 }
 
-
-
-//cart page listeners
 document.addEventListener('DOMContentLoaded', getCart)
